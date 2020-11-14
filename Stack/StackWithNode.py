@@ -29,8 +29,6 @@ class Stack(object):
     def pop(self):
         if self.count > 0 and self.head:
             value = self.head.value
-            print("self.head : {}".format(self.head ))
-            print("self.head.next : {}".format(self.head.next))
             self.head = self.head.next
             self.count -= 1
             return value
