@@ -1,26 +1,39 @@
 class Node(object):
-    def __init__(self, value=None, pointer=None):
+    def __init__(self, value=None, next=None):
         self.value = value
-        self.pointer = pointer
+        self.next = next
+
 
 class Stack(object):
     def __init__(self):
-        self.head = None
+        self.head = None  # head : Stack의 가장 윗 부분을 가리킴
         self.count = 0
 
     def isEmpty(self):
         return not bool(self.head)
 
+    ''' 
+    1. newNode는 기존에 존재하는 이전 Node(head)를 가리킴         
+    2. head는 newNode를 가리킴
+    '''
     def push(self, item):
-        self.head = Node(item, self.head)
+        newNode = Node(item, self.head)
+        newNode.next = self.head
+        self.head = newNode
         self.count += 1
 
+    '''
+    1. value에 head.value를 담음 
+    2. head에는 이전 노드주소(head.next)를 담음
+    '''
     def pop(self):
         if self.count > 0 and self.head:
-            node = self.head
-            self.head = node.pointer
+            value = self.head.value
+            print("self.head : {}".format(self.head ))
+            print("self.head.next : {}".format(self.head.next))
+            self.head = self.head.next
             self.count -= 1
-            return node.value
+            return value
         else:
             print(" Stack is empty")
 
@@ -36,8 +49,8 @@ class Stack(object):
     def _printList(self):
         node = self.head
         while node:
-            print(node.value, end= " ")
-            node = node.pointer
+            print(node.value, end=" ")
+            node = node.next
         print()
 
 
