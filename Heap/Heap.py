@@ -58,27 +58,10 @@ class Heapify(object):
 
         self.data[i] = item
 
+
 if __name__ == "__main__":
     listExample = [3, 2, 5, 1, 7, 8, 2]
     heap = Heapify(listExample)
 
     assert(heap.extractMax() == 8)
     print("Success !!")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
