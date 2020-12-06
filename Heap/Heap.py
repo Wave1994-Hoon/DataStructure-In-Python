@@ -1,3 +1,11 @@
+"""
+# 최대 힙 구현하기
+- 왼쪽 자식 노드 인덱스: (i X 2) + 1
+- 오른쪽 자식 노드 인덱스: (i X 2) + 2
+
+"""
+
+
 class Heapify(object):
     def __init__(self, data=None):
         self.data = data or []
