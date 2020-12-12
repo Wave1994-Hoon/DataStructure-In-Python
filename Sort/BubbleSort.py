@@ -5,7 +5,7 @@
 example
 - [11, 3, 28, 42, 9, 4]
   -----------------------------------
-  -> Step1: 11 / 3 / 28 / 42 / 9 / 4
+  -> Step1: 11 / 3 / 28 / 43 / 9 / 4
   -----------------------------------
   -> Step2: 3 / 11 / 28 / 9 / 4 / 43
   -----------------------------------
@@ -19,8 +19,9 @@ example
 
 
 def bubbleSort(sequence):
-    length = len(sequence) - 1
-    for number in range(length, 0, -1):
+    length = len(sequence)
+
+    for number in range(length-1, 0, -1):
         for index in range(number):
             if sequence[index] > sequence[index + 1]:
                 sequence[index] = sequence[index + 1]
