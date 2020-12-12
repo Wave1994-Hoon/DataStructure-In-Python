@@ -49,7 +49,5 @@ def countSort(sequence):
 
 
 if __name__ == "__main__":
-    sequence = [3, 5, 2, 6, 8, 1, 0]
-
-    # sequence = [3, 5, 2, 6, 8, 1, 0, 3, 5, 6, 2, 5, 4, 1, 5, 3]
+    sequence = [3, 5, 2, 6, 8, 1, 0, 3, 5, 6, 2, 5, 4, 1, 5, 3]
     assert (countSort(sequence) == sorted(sequence))
