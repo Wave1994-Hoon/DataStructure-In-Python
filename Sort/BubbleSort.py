@@ -18,14 +18,18 @@ example
 """
 
 
+def swap(sequence, index1, index2):
+    sequence[index1] = sequence[index2]
+    sequence[index2] = sequence[index1]
+
+
 def bubbleSort(sequence):
     length = len(sequence)
 
     for number in range(length-1, 0, -1):
         for index in range(number):
             if sequence[index] > sequence[index + 1]:
-                sequence[index] = sequence[index + 1]
-                sequence[index + 1] = sequence[index]
+                swap(sequence, index, index + 1)
 
     return sequence
 

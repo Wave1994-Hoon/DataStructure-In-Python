@@ -19,14 +19,19 @@ example
 
 """
 
+
+def swap(sequence, index1, index2):
+    sequence[index1] = sequence[index2]
+    sequence[index2] = sequence[index1]
+
+
 def insertionSort(sequence):
     length = len(sequence)
 
     for lastIndex in range(1, length):
         for searchedIndex in range(lastIndex, 0, -1):
             if sequence[searchedIndex-1] > sequence[searchedIndex]:
-                sequence[searchedIndex-1] = sequence[searchedIndex]
-                sequence[searchedIndex] = sequence[searchedIndex-1]
+                swap(sequence, searchedIndex-1, searchedIndex)
 
     return sequence
 

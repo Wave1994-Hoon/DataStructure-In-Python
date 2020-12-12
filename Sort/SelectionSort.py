@@ -18,6 +18,11 @@ example
 """
 
 
+def swap(sequence, index1, index2):
+    sequence[index1] = sequence[index2]
+    sequence[index2] = sequence[index1]
+
+
 def selectionSort(sequence):
     length = len(sequence)
 
@@ -27,8 +32,7 @@ def selectionSort(sequence):
             if sequence[minimumIndex] > sequence[searchedIndex]:
                 minimumIndex = searchedIndex
 
-        sequence[startIndex] = sequence[minimumIndex]
-        sequence[minimumIndex] = sequence[startIndex]
+        swap(sequence, startIndex, minimumIndex)
 
     return sequence
 
